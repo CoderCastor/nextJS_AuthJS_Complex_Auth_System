@@ -38,7 +38,7 @@ export const register = async (values: z.infer<typeof RegisterSchema>) => {
     verificationToken.email,
     verificationToken.token
    )  
-   console.log("Mail sned")
+   console.log("Mail send")
 
     return { success: "Confirmation email sent" };
 };
