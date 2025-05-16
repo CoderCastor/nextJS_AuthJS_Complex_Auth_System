@@ -18,6 +18,7 @@ import { Button } from "@/components/ui/button";
 import { FormError } from "@/components/form-error";
 import { FormSuccess } from "@/components/form-success";
 import { register } from "@/actions/register";
+import { BeatLoader} from "react-spinners";
 
 export const RegisterForm = () => {
     const [error, setError] = useState("");
@@ -120,7 +121,7 @@ export const RegisterForm = () => {
                         type="submit"
                         className="w-full"
                     >
-                        Create an account
+                        {isPending ? <BeatLoader color="white" size={5} /> : "Create an account"}
                     </Button>
                 </form>
             </Form>

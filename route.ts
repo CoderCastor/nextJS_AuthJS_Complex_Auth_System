@@ -16,7 +16,9 @@ export const publicRoutes = [
 export const authRoutes = [
     "/auth/login",
     "/auth/register",
-    "/auth/error"
+    "/auth/error",
+    "/auth/reset",
+    "/auth/new-password"  
 ]
 
 /**
@@ -24,7 +26,7 @@ export const authRoutes = [
  * Routes that starts with this prefix are used for API authentication purposes 
  * @type {string}
  */
-export const apiAuthPrefix = "/api/auth"
+export const apiAuthPrefix = "/api/auth" 
 
 /**
  * The default redirect path after logging in
