@@ -58,7 +58,9 @@ export async function sendVerificationEmail(email: string, token: string) {
             subject: "Confirm your email",
             html: `
   <div style="font-family: Arial, sans-serif; line-height: 1.6; color: #333; max-width: 600px; margin: auto; padding: 20px; border: 1px solid #eee; border-radius: 8px;">
-  <h2 style="color: #4F46E5;">Welcome to Castor's Auth Service!</h2>
+  <h1 style="font-size: 3rem; font-weight: 600; margin-top: 0.75rem; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; text-align: center;">
+  ⇲ Exam<span style="color: #6B21A8;">iniX</span>
+</h1>
   <p>Hi there,</p>
   <p>Thank you for signing up. Please confirm your email address by clicking the button below:</p>
 
@@ -107,6 +109,9 @@ export async function sendPasswordResetEmail(email: string, token: string) {
             subject: "Reset your password",
             html: `
 <div style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f9fafb; padding: 30px; max-width: 600px; margin: auto; border-radius: 12px; border: 1px solid #e5e7eb; box-shadow: 0 6px 18px rgba(0,0,0,0.05);">
+<h1 style="font-size: 2rem; font-weight: 600; margin-top: 0.75rem; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; text-align: center;">
+  ⇲ Exam<span style="color: #6366F1;">iniX</span>
+</h1>
   <div style="text-align: center;">
     <h2 style="color: #4F46E5; margin: 0 0 10px;">Reset Your Password</h2>
     <p style="color: #6b7280; font-size: 15px; margin-bottom: 30px;">
