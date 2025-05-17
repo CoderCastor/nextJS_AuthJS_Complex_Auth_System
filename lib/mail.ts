@@ -58,7 +58,7 @@ export async function sendVerificationEmail(email: string, token: string) {
             subject: "Confirm your email",
             html: `
   <div style="font-family: Arial, sans-serif; line-height: 1.6; color: #333; max-width: 600px; margin: auto; padding: 20px; border: 1px solid #eee; border-radius: 8px;">
-  <h1 style="font-size: 3rem; font-weight: 600; margin-top: 0.75rem; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; text-align: center;">
+  <h1 style="font-size: 1.5rem; font-weight: 600; margin-top: 0.75rem; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; text-align: center;">
   ⇲ Exam<span style="color: #6B21A8;">iniX</span>
 </h1>
   <p>Hi there,</p>
@@ -73,7 +73,7 @@ export async function sendVerificationEmail(email: string, token: string) {
   </div>
 
 
-  <p style="margin-top: 30px;">Thanks,<br>The Castor Team</p>
+  <p style="margin-top: 30px;">Thanks,<br>⇲ Examinix Team</p>
 </div>
 `,
         };
@@ -109,7 +109,7 @@ export async function sendPasswordResetEmail(email: string, token: string) {
             subject: "Reset your password",
             html: `
 <div style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f9fafb; padding: 30px; max-width: 600px; margin: auto; border-radius: 12px; border: 1px solid #e5e7eb; box-shadow: 0 6px 18px rgba(0,0,0,0.05);">
-<h1 style="font-size: 2rem; font-weight: 600; margin-top: 0.75rem; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; text-align: center;">
+<h1 style="font-size: 1.5rem; font-weight: 600; margin-top: 0.75rem; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; text-align: center;">
   ⇲ Exam<span style="color: #6366F1;">iniX</span>
 </h1>
   <div style="text-align: center;">
@@ -125,9 +125,9 @@ export async function sendPasswordResetEmail(email: string, token: string) {
       ${resetLink}
     </div>
     <p style="font-size: 13px; color: #6b7280; margin-top: 30px;">If you did not request this, please ignore this email.</p>
-    <p style="font-size: 14px; color: #4B5563; margin-top: 40px;">— The Castor Team</p>
+    <p style="font-size: 14px; color: #4B5563; margin-top: 40px;">— ⇲ Examinix Team</p>
     <hr style="border: none; border-top: 1px solid #e5e7eb; margin: 40px 0 10px;">
-    <p style="font-size: 12px; color: #9ca3af; text-align: center;">© Castor Inc. All rights reserved.</p>
+    <p style="font-size: 12px; color: #9ca3af; text-align: center;">© ⇲ Examinix Inc. All rights reserved.</p>
   </div>
 </div>
 `,
@@ -140,13 +140,8 @@ export async function sendPasswordResetEmail(email: string, token: string) {
     }
 }
 
-
-export const sendTwoFactorTokenEmail = async (
-    email : string,
-    token : string
-) => {
+export const sendTwoFactorTokenEmail = async (email: string, token: string) => {
     try {
-        
         const accessToken = await oauth2Client.getAccessToken();
 
         const transporter = nodemailer.createTransport({
@@ -166,9 +161,12 @@ export const sendTwoFactorTokenEmail = async (
             from: `Team AuthService`,
             to: email,
             subject: "2FA Code",
-            html : `
+            html: `
 <div style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f9fafb; padding: 30px; max-width: 600px; margin: auto; border-radius: 12px; border: 1px solid #e5e7eb; box-shadow: 0 6px 18px rgba(0,0,0,0.05);">
   <div style="text-align: center;">
+    <h1 style="font-size: 1.5rem; font-weight: 600; margin-top: 0.75rem; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; text-align: center;">
+  ⇲ Exam<span style="color: #6366F1;">iniX</span>
+</h1>
     <h2 style="color: #4F46E5; margin: 0 0 10px;">Your Two Factor Authentication Code</h2>
     <p style="color: #6b7280; font-size: 15px; margin-bottom: 24px;">
       Use the code below to complete your sign-in. This code will expire in 10 minutes.
@@ -179,12 +177,12 @@ export const sendTwoFactorTokenEmail = async (
     </div>
 
     <p style="font-size: 13px; color: #6b7280; margin-bottom: 10px;">If you didn’t request this code, you can safely ignore this email.</p>
-    <p style="font-size: 14px; color: #4B5563; margin-top: 30px;">— The Castor Team</p>
+    <p style="font-size: 14px; color: #4B5563; margin-top: 30px;">— ⇲ Examinix Team</p>
     <hr style="border: none; border-top: 1px solid #e5e7eb; margin: 40px 0 10px;">
-    <p style="font-size: 12px; color: #9ca3af; text-align: center;">© Castor Inc. All rights reserved.</p>
+    <p style="font-size: 12px; color: #9ca3af; text-align: center;">© ⇲ Examinix Inc. All rights reserved.</p>
   </div>
 </div>
-`
+`,
         };
 
         const result = await transporter.sendMail(mailOptions);
@@ -192,4 +190,4 @@ export const sendTwoFactorTokenEmail = async (
     } catch (error) {
         console.error("Error sending email:", error);
     }
-}
+};
